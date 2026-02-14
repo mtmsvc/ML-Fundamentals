@@ -20,8 +20,8 @@ def gradient_descent(w_cur, b_cur, points, lr):
     N = len(points)
 
     for i in range(N):
-        x = points.iloc[i]["Hours Studied"]
-        y = points.iloc[i]["Performance Index"]
+        x = points.loc[i, "Hours Studied"]
+        y = points.loc[i, "Performance Index"]
 
         w_grad += -(2 / N) * x * (y - (w_cur * x + b_cur))
         b_grad += -(2 / N) * (y - (w_cur * x + b_cur))
